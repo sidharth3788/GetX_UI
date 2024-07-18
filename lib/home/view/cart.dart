@@ -79,7 +79,7 @@ class _MyCartState extends State<MyCart> {
                       child: Image.asset('assets/list_content/boat.jpg'),
                     ),
                     title: const Text(
-                      'Boat Earbuds',
+                      'Boat',
                       style: TextStyle(
                           color: Color(0xFF041444),
                           fontWeight: FontWeight.bold),
@@ -123,7 +123,7 @@ class _MyCartState extends State<MyCart> {
                       child: Image.asset('assets/list_content/boat.jpg'),
                     ),
                     title: const Text(
-                      'Boat Earbuds Pro',
+                      'OnePlus',
                       style: TextStyle(
                           color: Color(0xFF041444),
                           fontWeight: FontWeight.bold),

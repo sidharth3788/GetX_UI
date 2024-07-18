@@ -10,8 +10,6 @@ class CounterController extends GetxController {
   void decrement() {
     if (itemcount >= 2) {
       itemcount--;
-    } else {
-      print('Atleast one count needed');
     }
   }
 
@@ -24,8 +22,6 @@ class CounterController extends GetxController {
   void decrement1() {
     if (itemcount1 >= 2) {
       itemcount1--;
-    } else {
-      print('Atleast one count needed');
     }
   }
 }
