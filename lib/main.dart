@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:getx_state_management/home/view/cart.dart';
-import 'package:getx_state_management/home/view/obx_page.dart';
 
 void main() {
   runApp(const MyApp());

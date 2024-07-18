@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:getx_state_management/home/controller/home_controller.dart';
 
 class MyCart extends StatefulWidget {
   const MyCart({super.key});
@@ -8,26 +10,9 @@ class MyCart extends StatefulWidget {
 }
 
 class _MyCartState extends State<MyCart> {
-  int count = 0;
-
-  void increment() {
-    setState(() {
-      count++;
-    });
-  }
-
-  void decrement() {
-    if (count >= 1) {
-      setState(() {
-        count--;
-      });
-    } else {
-      print('Atleast one count needed');
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
+    var itemcontroller = Get.put(CounterController());
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
@@ -109,19 +94,21 @@ class _MyCartState extends State<MyCart> {
                       children: [
                         TextButton(
                             onPressed: () {
-                              decrement();
+                              itemcontroller.decrement();
                             },
                             child: const Text('-')),
                         const SizedBox(
                           width: 10,
                         ),
-                        Text(count.toString()),
+                        Obx(() => Text(
+                              '${itemcontroller.itemcount}',
+                            )),
                         const SizedBox(
                           width: 10,
                         ),
                         TextButton(
                             onPressed: () {
-                              increment();
+                              itemcontroller.increment();
                             },
                             child: const Text('+')),
                       ],
@@ -151,19 +138,19 @@ class _MyCartState extends State<MyCart> {
                       children: [
                         TextButton(
                             onPressed: () {
-                              decrement();
+                              itemcontroller.decrement1();
                             },
                             child: const Text('-')),
                         const SizedBox(
                           width: 10,
                         ),
-                        Text(count.toString()),
+                        Obx(() => Text('${itemcontroller.itemcount1}')),
                         const SizedBox(
                           width: 10,
                         ),
                         TextButton(
                             onPressed: () {
-                              increment();
+                              itemcontroller.increment1();
                             },
                             child: const Text('+')),
                       ],
