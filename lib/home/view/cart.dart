@@ -82,12 +82,32 @@ class _MyCartState extends State<MyCart> {
                       'Boat',
                       style: TextStyle(
                           color: Color(0xFF041444),
-                          fontWeight: FontWeight.bold),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16),
                     ),
-                    subtitle: const Text(
-                      '2549.0 ₹',
-                      style: TextStyle(
-                          color: Colors.red, fontWeight: FontWeight.bold),
+                    subtitle: Obx(
+                      () => RichText(
+                        text: TextSpan(
+                          children: [
+                            TextSpan(
+                              text: '${itemcontroller.totalPrice}',
+                              style: const TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
+                            ),
+                            const TextSpan(
+                              text: '.0 ₹',
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.red,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                     trailing: Row(
                       mainAxisSize: MainAxisSize.min,
@@ -102,6 +122,11 @@ class _MyCartState extends State<MyCart> {
                         ),
                         Obx(() => Text(
                               '${itemcontroller.itemcount}',
+                              style: const TextStyle(
+                                color: Color(0xFF041444),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
                             )),
                         const SizedBox(
                           width: 10,
@@ -114,6 +139,7 @@ class _MyCartState extends State<MyCart> {
                       ],
                     ),
                   ),
+                  const Divider(),
                   ListTile(
                     leading: ConstrainedBox(
                       constraints: const BoxConstraints(
@@ -126,104 +152,148 @@ class _MyCartState extends State<MyCart> {
                       'OnePlus',
                       style: TextStyle(
                           color: Color(0xFF041444),
-                          fontWeight: FontWeight.bold),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16),
                     ),
-                    subtitle: const Text(
-                      '3549.0 ₹',
-                      style: TextStyle(
-                          color: Colors.red, fontWeight: FontWeight.bold),
+                    subtitle: Obx(
+                      () => RichText(
+                        text: TextSpan(
+                          children: [
+                            TextSpan(
+                              text: '${itemcontroller.totalPrice1}',
+                              style: const TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
+                            ),
+                            const TextSpan(
+                              text: '.0 ₹',
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.red,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                     trailing: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         TextButton(
-                            onPressed: () {
-                              itemcontroller.decrement1();
-                            },
-                            child: const Text('-')),
+                          onPressed: () {
+                            itemcontroller.decrement1();
+                          },
+                          child: const Text('-'),
+                        ),
                         const SizedBox(
                           width: 10,
                         ),
-                        Obx(() => Text('${itemcontroller.itemcount1}')),
+                        Obx(() => Text(
+                              '${itemcontroller.itemcount1}',
+                              style: const TextStyle(
+                                color: Color(0xFF041444),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
+                            )),
                         const SizedBox(
                           width: 10,
                         ),
                         TextButton(
-                            onPressed: () {
-                              itemcontroller.increment1();
-                            },
-                            child: const Text('+')),
+                          onPressed: () {
+                            itemcontroller.increment1();
+                          },
+                          child: const Text('+'),
+                        ),
                       ],
                     ),
                   ),
                   const SizedBox(
-                    height: 150,
+                    height: 270,
                   ),
-                  const ListTile(
-                    leading: Text(
-                      'Items',
+                  ListTile(
+                    leading: const Text(
+                      'Total Items',
                       style: TextStyle(
                           fontSize: 16,
                           color: Colors.grey,
                           fontWeight: FontWeight.bold),
                     ),
-                    trailing: Text(
-                      '6098.0 ₹',
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFF041444)),
-                    ),
-                  ),
-                  const ListTile(
-                    leading: Text(
-                      'Discount',
-                      style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.grey,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    trailing: Text(
-                      '-98.0 ₹',
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFF041444)),
+                    trailing: Obx(
+                      () => RichText(
+                        text: TextSpan(
+                          children: [
+                            TextSpan(
+                              text: '${itemcontroller.combinedItem}',
+                              style: const TextStyle(
+                                color: Color(0xFF041444),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
+                            ),
+                            const TextSpan(
+                              text: ' Items',
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFF041444),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                   const Divider(),
-                  const ListTile(
-                    leading: Text(
-                      'Total',
+                  ListTile(
+                    leading: const Text(
+                      'Total Amount',
                       style: TextStyle(
                           fontSize: 16,
                           color: Colors.grey,
                           fontWeight: FontWeight.bold),
                     ),
-                    trailing: Text(
-                      '-6000.0 ₹',
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFF041444)),
+                    trailing: Obx(
+                      () => RichText(
+                        text: TextSpan(
+                          children: [
+                            TextSpan(
+                              text: '${itemcontroller.combinedPrice}',
+                              style: const TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
+                            ),
+                            const TextSpan(
+                              text: '.0 ₹',
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.red,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                 ],
               ),
             ),
-            SizedBox(
-              height: 60,
-              width: double.maxFinite,
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF041444),
-                    textStyle: const TextStyle(
-                        fontSize: 30, fontWeight: FontWeight.bold)),
-                child: const Text(
-                  'CHECKOUT',
-                  style: TextStyle(color: Colors.white),
-                ),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF041444),
+                textStyle:
+                    const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              child: const Text(
+                'Checkout',
+                style: TextStyle(color: Colors.white),
               ),
             ),
           ],
